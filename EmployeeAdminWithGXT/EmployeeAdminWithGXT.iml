@@ -20,6 +20,14 @@
         <setting name="gwtSdkUrl" value="file://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.7.0/" />
         <setting name="gwtSdkType" value="maven" />
         <setting name="webFacet" value="Web" />
+        <packaging>
+          <module name="org.gwt4e.mvp4g.example.employeeadminwithgxt.EmployeeAdminWithGXTJUnit" enabled="false" />
+        </packaging>
+      </configuration>
+    </facet>
+    <facet type="google-app-engine" name="Google App Engine">
+      <configuration>
+        <sdk-home-path>$MODULE_DIR$/../../../../GWT App Engine/appengine-java-sdk-1.9.8</sdk-home-path>
       </configuration>
     </facet>
   </component>
