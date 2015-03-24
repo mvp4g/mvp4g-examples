@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="EmployeeAdminWithGXT">
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='org.gwt4e.mvp4g.example.employeeadminwithgxt.EmployeeAdminWithGXT' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/EmployeeAdminWithGXT/greet" class="org.gwt4e.mvp4g.example.employeeadminwithgxt.server.GreetingServiceImpl" />
+
+</module>

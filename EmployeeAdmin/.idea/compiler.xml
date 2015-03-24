@@ -20,7 +20,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="employeeadmim" target="1.7" />
       <module name="EmployeeAdmin" target="1.7" />
+      <module name="employeeadminwithgxt" target="1.7" />
+      <module name="EmployeeAdminWithGXT" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

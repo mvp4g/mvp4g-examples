@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='employeeadminwithgxt'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User' />
+
+  <!-- Other module inherits                                      -->
+  <inherits name='com.mvp4g.Mvp4gModule'/>
+  <inherits name="com.sencha.gxt.widget.core.Core"/>
+
+  <!-- GXT Stylesheet -->
+  <stylesheet src="reset.css"/>
+
+  <!-- GXT Theme -->
+  <!-- <inherits name='com.sencha.gxt.theme.blue.Blue' /> -->
+  <!-- <inherits name='com.sencha.gxt.theme.gray.Gray' /> -->
+  <!-- Be sure to include Neptunes gxt-theme-neptune.jar in the classpath -->
+  <inherits name='com.sencha.gxt.theme.neptune.Theme' />
+  
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='org.gwt4e.mvp4g.example.employeeadminwithgxt.client.EmployeeAdminWithGXT' />
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client' />
+  <source path='shared' />
+
+  <replace-with class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.shell.ShellView">
+    <when-type-is class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.shell.IShellView"/>
+  </replace-with>
+
+  <replace-with class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.user.list.UserListView">
+    <when-type-is class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.user.list.IUserListView"/>
+  </replace-with>
+
+  <replace-with class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.user.profile.UserProfileView">
+    <when-type-is class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.user.profile.IUserProfileView"/>
+  </replace-with>
+
+  <replace-with class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.user.role.UserRoleView">
+    <when-type-is class="org.gwt4e.mvp4g.example.employeeadminwithgxt.client.ui.user.role.IUserRoleView"/>
+  </replace-with>
+
+
+  <!-- Super Dev Mode                                             -->
+  <add-linker name="xsiframe"/>
+
+
+  <!-- GXT Work around                                            -->
+  <replace-with class="com.sencha.gxt.theme.neptune.client.base.menu.Css3MenuItemAppearance">
+    <when-type-is class="com.sencha.gxt.widget.core.client.menu.Item.ItemAppearance"/>
+  </replace-with>
+</module>

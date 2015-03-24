@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="EmployeeAdminWithGXT - SDM " type="GWT.ConfigurationType" factoryName="GWT Configuration" singleton="true">
+    <module name="EmployeeAdminWithGXT" />
+    <option name="RUN_PAGE" value="EmployeeAdminWithGXT.html" />
+    <option name="START_JAVASCRIPT_DEBUGGER" value="true" />
+    <option name="BROWSER" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+    <option name="USE_SUPER_DEV_MODE" value="true" />
+    <RunnerSettings RunnerId="Debug">
+      <option name="DEBUG_PORT" value="" />
+      <option name="TRANSPORT" value="0" />
+      <option name="LOCAL" value="true" />
+    </RunnerSettings>
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Debug" />
+    <ConfigurationWrapper RunnerId="Run" />
+    <method />
+  </configuration>
+</component>
