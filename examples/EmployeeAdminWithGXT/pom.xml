@@ -211,6 +211,15 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <version>2.6.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>test</goal>
+              <goal>generateAsync</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
           <runTarget>MailWithMvp4g.html</runTarget>
           <hostedWebapp>${basedir}/war</hostedWebapp>
