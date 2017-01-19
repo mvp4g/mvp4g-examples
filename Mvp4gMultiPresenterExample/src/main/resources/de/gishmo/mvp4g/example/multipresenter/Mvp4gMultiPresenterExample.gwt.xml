@@ -39,9 +39,9 @@
   <replace-with class="de.gishmo.mvp4g.example.multipresenter.client.ui.header.HeaderView">
     <when-type-is class="de.gishmo.mvp4g.example.multipresenter.client.ui.header.IHeaderView"/>
   </replace-with>
-  <!--<replace-with class="de.gothaer.gwt.taa.client.frame.ui.navigation.NavigationView">-->
-    <!--<when-type-is class="de.gothaer.gwt.taa.client.frame.ui.navigation.INavigationView"/>-->
-  <!--</replace-with>-->
+  <replace-with class="de.gishmo.mvp4g.example.multipresenter.client.ui.toolbar.ToolbarView">
+    <when-type-is class="de.gishmo.mvp4g.example.multipresenter.client.ui.toolbar.IToolbarView"/>
+  </replace-with>
   <replace-with class="de.gishmo.mvp4g.example.multipresenter.client.ui.shell.ShellView">
     <when-type-is class="de.gishmo.mvp4g.example.multipresenter.client.ui.shell.IShellView"/>
   </replace-with>

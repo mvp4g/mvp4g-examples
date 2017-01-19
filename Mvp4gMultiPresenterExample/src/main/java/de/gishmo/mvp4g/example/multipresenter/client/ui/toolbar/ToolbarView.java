@@ -11,7 +11,7 @@ import com.sencha.gxt.widget.core.client.container.AbstractHtmlLayoutContainer.H
 import com.sencha.gxt.widget.core.client.container.HtmlLayoutContainer;
 
 import de.gishmo.mvp4g.example.multipresenter.client.ui.AbstractReverseComposite;
-import de.gishmo.mvp4g.example.multipresenter.client.ui.header.IHeaderView.Presenter;
+import de.gishmo.mvp4g.example.multipresenter.client.ui.toolbar.IToolbarView.Presenter;
 
 public final class ToolbarView
   extends AbstractReverseComposite<Presenter>
