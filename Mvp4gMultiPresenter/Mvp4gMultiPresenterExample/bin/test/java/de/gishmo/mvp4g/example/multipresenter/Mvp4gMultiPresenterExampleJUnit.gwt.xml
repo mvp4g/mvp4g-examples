@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  When updating your version of GWT, you should also update this DTD reference,
+  so that your app can take advantage of the latest GWT module capabilities.
+-->
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+  "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to='mvp4gmultipresenterexample'>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='de.gishmo.mvp4g.example.multipresenter.Mvp4gMultiPresenterExample'/>
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/mvp4gmultipresenterexample/greet" class="de.gishmo.mvp4g.example.multipresenter.server.GreetingServiceImpl" />
+
+</module>

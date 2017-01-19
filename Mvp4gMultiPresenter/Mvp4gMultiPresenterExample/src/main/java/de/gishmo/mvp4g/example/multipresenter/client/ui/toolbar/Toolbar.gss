@@ -1,0 +1,12 @@
+.container {
+    background-color: white;
+}
+
+.leftColumn {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.button {
+
+}
