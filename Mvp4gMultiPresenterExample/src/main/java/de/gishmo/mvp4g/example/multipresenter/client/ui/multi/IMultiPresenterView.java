@@ -14,46 +14,7 @@ public interface IMultiPresenterView
 
   void edit(MultiPresenterModel model);
 
-  //
-//  void bindDataToView(ClFiliale filiale);
-//
-//  ClFiliale bindViewToData();
-//
-//  void clearFilialeUserRelations();
-//
-//  void configForm(boolean isEdit);
-//
-//  void configToolBar(boolean isEdit,
-//                     ClientContext clientContext,
-//                     ClFiliale filiale);
-//
-//  void configToolBarFilialeUserRelations(ClientContext clientContext,
-//                                         ClFiliale filiale);
-//
-//  boolean isValid();
-//
-//  void reset();
-//
-//  void setErrors(List<ClServiceMessage> list);
-//
-//  void setFilialeUserRelations(List<ClFilialeRelation> result);
-//
-  public interface Presenter {
+  interface Presenter {
 
-//    void doCancel();
-//
-//    void doConfigFilialeUserRelations();
-//
-//    void doDelete();
-//
-//    void doEditFiliale();
-//
-//    void doNewFiliale();
-//
-//    void doRefreshFiliale();
-//
-//    void doRefreshFilialeUserRelations();
-//
-//    void doSaveFiliale();
   }
 }
