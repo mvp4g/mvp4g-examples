@@ -40,10 +40,10 @@ public final class ShellPresenter
 //  public void onSetButtonBar(Widget buttonBar) {
 //    view.setButtonBar(buttonBar);
 //  }
-//
-//  public void onSetShellContent(Widget content) {
-//    view.setShellContent(content);
-//  }
+
+  public void onSetShellContent(Widget content) {
+    view.setShellContent(content);
+  }
 
   public void onSetToolbar(Widget navigation) {
     view.setToolbar(navigation);

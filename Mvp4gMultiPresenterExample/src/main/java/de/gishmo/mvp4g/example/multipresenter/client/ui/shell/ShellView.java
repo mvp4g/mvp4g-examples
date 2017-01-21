@@ -5,6 +5,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.themebuilder.base.client.config.ThemeDetails;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
+import com.sencha.gxt.widget.core.client.container.MarginData;
 import com.sencha.gxt.widget.core.client.container.SimpleContainer;
 import com.sencha.gxt.widget.core.client.container.Viewport;
 
@@ -27,7 +28,7 @@ public final class ShellView
   private SimpleContainer       headerArea;
   private ContentPanel          toolbarArea;
   //  private SimpleContainer         navigationArea;
-  private ContentPanel          content;
+  private SimpleContainer       content;
 
   public ShellView() {
     // // Viewport fomatieren
@@ -36,7 +37,8 @@ public final class ShellView
     shell = new BorderLayoutContainer();
     headerArea = new SimpleContainer();
     toolbarArea = new ContentPanel();
-    content = new ContentPanel();
+    content = new SimpleContainer();
+    content.setSize("100%", "100%");
 //    messages = new ContentPanel();
 //    mbMessageContentArea = new MbMessage(new MbMessageDelegate() {
 //      @Override
@@ -92,11 +94,10 @@ public final class ShellView
 //                                 new BorderLayoutData(100));
 //
 //    westContainer.setCenterWidget(navigationArea);
-//
-//    shellContent = new BorderLayoutContainer();
-//    shell.add(shellContent,
-//              new MarginData(4));
-//
+
+    shell.add(content,
+              new MarginData(4));
+
 ////    BorderLayoutData ldMessages = new BorderLayoutData(Constants.MESSAGES_HEIGHT);
 ////    ldMessages.setCollapsed(false);
 ////    messages.setHeaderVisible(false);
@@ -146,11 +147,15 @@ public final class ShellView
 //  public void setButtonBar(Widget buttonBar) {
 //    this.buttonBar.setWidget(buttonBar);
 //  }
-//
-//  @Override
-//  public void setShellContent(Widget content) {
-//    this.content.add(content);
-//  }
+
+  @Override
+  public void setShellContent(Widget content) {
+    if (this.content.getWidget() != null) {
+      this.content.getWidget()
+                  .removeFromParent();
+    }
+    this.content.add(content);
+  }
 
   @Override
   public void setHeader(Widget headerArea) {

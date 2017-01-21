@@ -7,8 +7,8 @@ public interface IShellView
   extends ReverseViewInterface<IShellView.Presenter> {
 
 //  void setButtonBar(Widget buttonBar);
-//
-//  void setShellContent(Widget content);
+
+  void setShellContent(Widget content);
 
   void setHeader(Widget header);
 

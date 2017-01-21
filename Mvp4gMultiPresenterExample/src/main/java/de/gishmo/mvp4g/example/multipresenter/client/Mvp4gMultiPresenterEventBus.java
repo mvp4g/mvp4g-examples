@@ -7,7 +7,9 @@ import com.mvp4g.client.annotation.Events;
 import com.mvp4g.client.annotation.Start;
 import com.mvp4g.client.event.EventBus;
 
+import de.gishmo.mvp4g.example.multipresenter.client.ui.content.ContentPresenter;
 import de.gishmo.mvp4g.example.multipresenter.client.ui.header.HeaderPresenter;
+import de.gishmo.mvp4g.example.multipresenter.client.ui.multi.MultiPresenterHandler;
 import de.gishmo.mvp4g.example.multipresenter.client.ui.shell.ShellPresenter;
 import de.gishmo.mvp4g.example.multipresenter.client.ui.toolbar.ToolbarPresenter;
 
@@ -20,9 +22,8 @@ public interface Mvp4gMultiPresenterEventBus
 
   @Start
   @Event(bind = { HeaderPresenter.class,
-                  ToolbarPresenter.class
-//                  ContentPresenter.class
-  })
+                  ToolbarPresenter.class,
+                  ContentPresenter.class })
   void start();
 
 //  @Event(handlers = NavigationPresenter.class,
@@ -194,15 +195,39 @@ public interface Mvp4gMultiPresenterEventBus
 //  @Event(handlers = ContentPresenter.class)
 //  void setContent(String token,
 //                  Widget content);
-//
-//  @Event(handlers = ShellPresenter.class)
-//  void setShellContent(Widget asWidget);
+
+  @Event(handlers = ShellPresenter.class)
+  void setShellContent(Widget asWidget);
 
   @Event(handlers = ShellPresenter.class)
   void setHeader(Widget header);
 
   @Event(handlers = ShellPresenter.class)
   void setToolbar(Widget widget);
+
+  /* closeTab */
+  @Event(handlers = ContentPresenter.class)
+  void closeTabItem(String id);
+
+  @Event(handlers = ContentPresenter.class)
+  void addTabItem(String id,
+                  String name,
+                  Widget container,
+                  boolean isDirty);
+
+  @Event(handlers = ContentPresenter.class)
+  void refreshTabName(String id,
+                      String newName,
+                      boolean isDirty);
+
+  @Event(handlers = ContentPresenter.class)
+  void removeTabItem(String id);
+
+  @Event(handlers = ContentPresenter.class)
+  void selectTabItem(String id);
+
+  @Event(handlers = MultiPresenterHandler.class)
+  void addMultiPresenter(String key);
 
 //  /**
 //   * Verarbeitet das Entfernen eines Produktes aus der Produktiste.

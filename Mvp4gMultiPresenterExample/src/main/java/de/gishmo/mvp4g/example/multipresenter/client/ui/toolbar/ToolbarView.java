@@ -1,14 +1,13 @@
 package de.gishmo.mvp4g.example.multipresenter.client.ui.toolbar;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.CssResource;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.Label;
-import com.sencha.gxt.core.client.XTemplates;
-import com.sencha.gxt.widget.core.client.container.AbstractHtmlLayoutContainer.HtmlData;
-import com.sencha.gxt.widget.core.client.container.HtmlLayoutContainer;
+import com.sencha.gxt.core.client.util.Margins;
+import com.sencha.gxt.widget.core.client.button.TextButton;
+import com.sencha.gxt.widget.core.client.container.CssFloatLayoutContainer;
+import com.sencha.gxt.widget.core.client.container.CssFloatLayoutContainer.CssFloatData;
+import com.sencha.gxt.widget.core.client.event.SelectEvent;
+import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
 
 import de.gishmo.mvp4g.example.multipresenter.client.ui.AbstractReverseComposite;
 import de.gishmo.mvp4g.example.multipresenter.client.ui.toolbar.IToolbarView.Presenter;
@@ -19,62 +18,38 @@ public final class ToolbarView
              IsWidget {
 
   /* panel */
-  private HtmlLayoutContainer container;
-  /* label */
-  private Label               labelHeadline;
-  /* Header Style */
-  private HeaderStyle         style;
+  private CssFloatLayoutContainer container;
+  /* Widgets */
+  private TextButton              addButton;
 
   public ToolbarView() {
     // Widgets
     createWidget();
+    bind();
     initWidget(container);
   }
 
+  private void bind() {
+    addButton.addSelectHandler(new SelectHandler() {
+      @Override
+      public void onSelect(SelectEvent selectEvent) {
+        getPresenter().doAdd();
+      }
+    });
+  }
+
   private void createWidget() {
-    Resources resources = GWT.create(Resources.class);
-    style = resources.style();
-    style.ensureInjected();
-
-    ContainerTemplate containerTemplate = GWT.create(ContainerTemplate.class);
-    container = new HtmlLayoutContainer(containerTemplate.getTemplate(style.container()));
-
-    labelHeadline = new Label(HeaderConstants.CONSTANTS.headline());
-
-    labelHeadline.addStyleName(style.leftColumn());
-
-    container.add(labelHeadline,
-                  new HtmlData(".leftColumn01"));
+    container = new CssFloatLayoutContainer();
+    addButton = new TextButton(ToolbarConstants.CONSTANTS.buttonLabel());
+    container.add(addButton,
+                  new CssFloatData(1,
+                                   new Margins(12,
+                                               0,
+                                               0,
+                                               24)));
   }
 
-  public interface ContainerTemplate
-    extends XTemplates {
-    @XTemplate("<table width=\"100%\" height=\"100%\" class=\"{container}\">" +
-               "  <tbody>" +
-               "    <tr>" +
-               "      <td height=\"50%\" class=\"leftColumn01\"></td>" +
-               "    </tr>" +
-               "  </tbody>" +
-               "</table>")
-    SafeHtml getTemplate(String container);
-  }
-
-  interface Resources
-    extends ClientBundle {
-
-    @Source("Toolbar.gss")
-    HeaderStyle style();
-
-  }
-
-  interface HeaderStyle
-    extends CssResource {
-
-    String container();
-
-    String leftColumn();
-
-    String button();
-
+  public HandlerRegistration addSelectHandler(SelectHandler handler) {
+    return addButton.addSelectHandler(handler);
   }
 }

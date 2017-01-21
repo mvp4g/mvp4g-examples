@@ -10,5 +10,6 @@ public interface IToolbarView
           ReverseViewInterface<Presenter> {
 
   interface Presenter {
+    void doAdd();
   }
 }
