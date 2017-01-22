@@ -69,7 +69,8 @@ public class MultiPresenterView
   }
 
   @Override
-  public void edit(MultiPresenterModel model) {
+  public void edit(String key,
+                   MultiPresenterModel model) {
     keyCurrentPresenterShowed.setValue(model.getId());
     tsCreated.setValue(model.getCreated());
   }

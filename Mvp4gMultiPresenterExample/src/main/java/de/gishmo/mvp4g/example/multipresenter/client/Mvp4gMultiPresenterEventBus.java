@@ -14,7 +14,6 @@ import de.gishmo.mvp4g.example.multipresenter.client.ui.shell.ShellPresenter;
 import de.gishmo.mvp4g.example.multipresenter.client.ui.toolbar.ToolbarPresenter;
 
 @Events(startPresenter = ShellPresenter.class,
-        historyOnStart = true,
         ginModules = Mvp4gMultiPresetnerGinModule.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED)
 public interface Mvp4gMultiPresenterEventBus
@@ -56,7 +55,18 @@ public interface Mvp4gMultiPresenterEventBus
   @Event(handlers = ContentPresenter.class)
   void selectTabItem(String id);
 
+  /**
+   * Anlage eines neuen "Multi-Datenmodels
+   */
   @Event(handlers = MultiPresenterHandler.class)
-  void addMultiPresenter(String key);
+  void newMulti();
 
+  /**
+   * Lesen und Anzeigen eines "Multi-Datenmodels mit dem uebergebenen Schluessel
+   */
+  @Event(handlers = MultiPresenterHandler.class)
+  void showMulti(String multiKey);
+
+  @Event(handlers = ContentPresenter.class)
+  void selectUebersicht();
 }

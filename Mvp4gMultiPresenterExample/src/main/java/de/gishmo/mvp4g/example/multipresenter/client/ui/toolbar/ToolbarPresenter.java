@@ -6,7 +6,6 @@ import com.mvp4g.client.presenter.BasePresenter;
 
 import de.gishmo.mvp4g.example.multipresenter.client.Mvp4gMultiPresenterEventBus;
 import de.gishmo.mvp4g.example.multipresenter.client.model.ApplicationContext;
-import de.gishmo.mvp4g.example.multipresenter.client.utils.GUID;
 
 @Presenter(view = IToolbarView.class)
 public final class ToolbarPresenter
@@ -23,6 +22,6 @@ public final class ToolbarPresenter
 
   @Override
   public void doAdd() {
-    eventBus.addMultiPresenter(GUID.get());
+    eventBus.newMulti();
   }
 }

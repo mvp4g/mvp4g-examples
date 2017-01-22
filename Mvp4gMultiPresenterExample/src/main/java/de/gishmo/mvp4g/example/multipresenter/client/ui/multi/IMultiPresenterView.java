@@ -12,7 +12,8 @@ public interface IMultiPresenterView
 
   void releaseResources();
 
-  void edit(MultiPresenterModel model);
+  void edit(String key,
+            MultiPresenterModel model);
 
   interface Presenter {
 

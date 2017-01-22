@@ -26,21 +26,6 @@ public final class ShellPresenter
     }
   }
 
-//  public void onExitApplication() {
-//    Info.display("Exit Application",
-//                 "Anwendung wird beendet");
-//    if (taaClientContext.isTAA()) {
-//      getEventBus().crmSprung(CRMType.CRM_TARGET_STEP_CANCEL,
-//                              true);
-//    } else {
-//      Window.Location.replace(Window.Location.getHref());
-//    }
-//  }
-//
-//  public void onSetButtonBar(Widget buttonBar) {
-//    view.setButtonBar(buttonBar);
-//  }
-
   public void onSetShellContent(Widget content) {
     view.setShellContent(content);
   }
@@ -52,18 +37,4 @@ public final class ShellPresenter
   public void onSetHeader(Widget header) {
     view.setHeader(header);
   }
-
-//  @Override
-//  public void onUpdateBeitrag() {
-//    view.updateBeitrag(taaClientContext.getAntrag(),
-//                       taaClientContext.getKeyTables());
-//  }
-//
-//  @Override
-//  public void doDispatch(String key01,
-//                         String key02) {
-//    TaaDispatcher.get()
-//                 .dispatch(key01,
-//                           key02);
-//  }
 }

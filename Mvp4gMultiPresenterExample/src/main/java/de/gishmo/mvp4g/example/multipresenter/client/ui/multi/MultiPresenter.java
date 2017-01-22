@@ -16,7 +16,6 @@ public class MultiPresenter
   public MultiPresenter() {
   }
 
-
   /**
    * Diese Methode wird beim Schliessen eines Tabs aufgerufen.
    * Hier hat der Entwickler die Möglichkeit Resoruces freizugeben.
@@ -26,7 +25,9 @@ public class MultiPresenter
     view.releaseResources();
   }
 
-  public void edit(MultiPresenterModel model) {
-    view.edit(model);
+  public void edit(String key,
+                   MultiPresenterModel model) {
+    view.edit(key,
+              model);
   }
 }

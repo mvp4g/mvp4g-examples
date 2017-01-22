@@ -67,8 +67,11 @@ public final class ContentPresenter
   }
 
   public void onSelectTabItem(String id) {
-    GWT.debugger();
     view.select(id);
+  }
+
+  public void onSelectUebersicht() {
+    view.selectUebersicht();
   }
 
   @Override
@@ -79,6 +82,7 @@ public final class ContentPresenter
   @Override
   public void doClose(String id) {
     eventBus.closeTabItem(id);
+    eventBus.selectUebersicht();
   }
 
   @Override
@@ -91,6 +95,7 @@ public final class ContentPresenter
       public void onDialogHide(DialogHideEvent event) {
         if (PredefinedButton.YES.equals(event.getHideButton())) {
           eventBus.closeTabItem(id);
+          eventBus.selectUebersicht();
         }
       }
     });
@@ -104,7 +109,6 @@ public final class ContentPresenter
 
   @Override
   public void doSelect(String id) {
-    GWT.debugger();
     eventBus.selectTabItem(id);
   }
 }

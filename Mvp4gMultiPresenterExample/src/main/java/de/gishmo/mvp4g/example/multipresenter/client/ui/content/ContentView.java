@@ -80,13 +80,38 @@ public final class ContentView
           .getStyle()
           .setBackgroundColor("white");
     portal.setBorders(false);
-////    portal.setAdjustForScroll(true);
     // Portal-Aufteilung setzen
     portal.setColumnWidth(0,
                           .50);
     portal.setColumnWidth(1,
                           .50);
     return portal;
+  }
+
+  private void createAndAddGridPortlet() {
+    store = new ListStore<>(properties.key());
+    ColumnConfig<TabItemValue, String> idColumn = new ColumnConfig<>(properties.id(),
+                                                                     1200,
+                                                                     "ID");
+    List<ColumnConfig<TabItemValue, ?>> columns = new ArrayList<>();
+    columns.add(idColumn);
+    ColumnModel<TabItemValue> cm = new ColumnModel<>(columns);
+    grid = new Grid<>(store,
+                      cm);
+    grid.getView()
+        .setAutoExpandColumn(idColumn);
+    grid.getView()
+        .setForceFit(true);
+    grid.getView()
+        .setStripeRows(true);
+    grid.getView()
+        .setColumnLines(true);
+    grid.setHeight(512);
+    Portlet portlet01 = new Portlet();
+    portlet01.setHeading("Offene Tabs");
+    portlet01.add(grid);
+    portal.add(portlet01,
+               0);
   }
 
   private void bind() {
@@ -101,7 +126,6 @@ public final class ContentView
         GWT.log("event.getSource().getId(): " +
                 event.getSource()
                      .getId());
-        GWT.debugger();
         tabItemValue = tabs.get(event.getItem()
                                      .getElement()
                                      .getId());
@@ -121,7 +145,6 @@ public final class ContentView
     tabPanel.addCloseHandler(new CloseEvent.CloseHandler<Widget>() {
       @Override
       public void onClose(CloseEvent<Widget> event) {
-        GWT.debugger();
         tabItemValue = tabs.get(event.getItem()
                                      .getElement()
                                      .getId());
@@ -136,33 +159,12 @@ public final class ContentView
     grid.addRowDoubleClickHandler(new RowDoubleClickHandler() {
       @Override
       public void onRowDoubleClick(RowDoubleClickEvent rowDoubleClickEvent) {
-        GWT.debugger();
         TabItemValue tiv = store.get(rowDoubleClickEvent.getRowIndex());
         if (tiv != null) {
           getPresenter().doSelect(tiv.getId());
         }
       }
     });
-  }
-
-  private void createAndAddGridPortlet() {
-    store = new ListStore<>(properties.key());
-    ColumnConfig<TabItemValue, String> idColumn = new ColumnConfig<>(properties.id(),
-                                                                                         1200,
-                                                                                         "ID");
-    List<ColumnConfig<TabItemValue, ?>> columns = new ArrayList<>();
-    columns.add(idColumn);
-    ColumnModel<TabItemValue> cm = new ColumnModel<>(columns);
-    grid = new Grid<>(store, cm);
-    grid.getView().setAutoExpandColumn(idColumn);
-    grid.getView().setForceFit(true);
-    grid.getView().setStripeRows(true);
-    grid.getView().setColumnLines(true);
-    grid.setHeight(512);
-    Portlet portlet01 = new Portlet();
-    portlet01.setHeading("Offene Tabs");
-    portlet01.add(grid);
-    portal.add(portlet01, 0);
   }
 
   @Override
@@ -194,7 +196,6 @@ public final class ContentView
 
   @Override
   public void close(String id) {
-    GWT.debugger();
     tabItemValue = tabs.get(id);
     if (tabItemValue != null) { // TabItem gefunden?
       tabPanel.remove(tabItemValue.getWidget());
@@ -294,6 +295,13 @@ public final class ContentView
     if (tabItemValue != null) {
       tabPanel.setActiveWidget(tabItemValue.getWidget());
     }
+  }
+
+  @Override
+  public void selectUebersicht() {
+    tabPanel.scrollToTab(portal,
+                         true);
+    tabPanel.setActiveWidget(portal);
   }
 
   @Override

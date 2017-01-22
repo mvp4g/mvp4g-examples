@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>Web Application Starter Project</title>
+
+    <!--                                           -->
+    <!-- this css is used by the loading indicator -->
+    <!--                                           -->
+    <style>
+      #loading {
+        position: absolute;
+        left: 42%;
+        top: 45%;
+        padding: 2px;
+        margin-left: -128px;
+        z-index: 99999;
+        border: 1px solid #ccc;
+        white-space: nowrap;
+      }
+
+      #loading .loading-indicator {
+        background: #fff;
+        font: bold 13px tahoma, arial, helvetica;
+        padding: 10px;
+        margin: 0;
+        height: auto;
+        color: #444;
+        white-space: nowrap;
+      }
+
+      #loading .loading-indicator img {
+        margin-right: 8px;
+        float: left;
+        vertical-align: top;
+        white-space: nowrap;
+      }
+
+      #loading-msg {
+        font: normal 10px tahoma, arial, helvetica, sans-serif;
+        white-space: nowrap;
+      }
+    </style>
+
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="mvp4gmultipresenterwithhistorieexample/mvp4gmultipresenterwithhistorieexample.nocache.js"></script>
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body style="margin: 0; padding: 0; background: repeat top left url(media/images/bg/square.gif);">
+
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <div id="loading">
+      <div class="loading-indicator">
+        <table>
+          <tr>
+            <td valign="top" style="width: 50px;"><img src="media/images/ajax-loader.gif"></td>
+            <td style="width: 256px;"><span style="font-weight: bold; white-space: nowrap">MVP4G Multi Presenter Example mit Historie</span><br/><span id="loading-msg">Loading application...</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

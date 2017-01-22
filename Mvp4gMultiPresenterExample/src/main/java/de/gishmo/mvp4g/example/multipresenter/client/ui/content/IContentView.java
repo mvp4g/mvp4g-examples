@@ -26,6 +26,8 @@ public interface IContentView
 
   void select(String id);
 
+  void selectUebersicht();
+
   interface Presenter {
 
     void doClose(String id);

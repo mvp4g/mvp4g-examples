@@ -1,0 +1,13 @@
+.container {
+    background-color: #d3d3d3;
+}
+
+.leftColumn {
+    text-align: left;
+    font-family: Arial, SansSerif;
+    font-size: 18px;
+    font-weight: bolder;
+    color: black;
+    margin-top: 3px;
+    margin-left: 6px;
+}
