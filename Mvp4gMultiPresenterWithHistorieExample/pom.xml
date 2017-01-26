@@ -12,13 +12,14 @@
 
   <properties>
     <!-- Convenience property to set the GWT version -->
-    <gwt.version>2.7.0</gwt.version>
+    <gwt.version>2.8.0</gwt.version>
     <gxt.version>4.0.0</gxt.version>
     <!-- Convenience property to set the mvp4g version -->
-    <mvp4g.version>1.5.0</mvp4g.version>
+    <mvp4g.version>1.5.1</mvp4g.version>
     <!-- Note: GWT needs at least java 1.6 -->
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencyManagement>
@@ -29,6 +30,7 @@
         <artifactId>gwt</artifactId>
         <version>${gwt.version}</version>
         <scope>import</scope>
+        <type>pom</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -76,10 +78,17 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.wallissoftware</groupId>
+      <artifactId>gwt-pushstate</artifactId>
+      <version>2.0.0</version>
+    </dependency>
   </dependencies>
 
 
   <build>
+    <!-- Generate compiled stuff in the folder used for development mode -->
+    <outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
     <!-- Resources -->
     <resources>
       <resource>
@@ -98,29 +107,23 @@
               <goal>compile</goal>
             </goals>
           </execution>
-          <execution>
-            <!-- Run tests through gwt:test, this allows reusing the plugin configuration for GWTTestCases -->
-            <id>gwt-tests</id>
-            <phase>test</phase>
-            <goals>
-              <goal>test</goal>
-            </goals>
-          </execution>
         </executions>
         <!-- Plugin configuration. There are many available options, 
              see gwt-maven-plugin documentation at codehaus.org -->
         <configuration>
           <modules>
-            <module>dde.gishmo.mvp4g.example.multipresenterwithhistorie.client.Mvp4gMultiPresenterWithHistorieExample</module>
+            <module>de.gishmo.mvp4g.example.multipresenterwithhistorie.Mvp4gMultiPresenterWithHistorieExample</module>
           </modules>
           <!-- URL that should be opened by DevMode (gwt:run). -->
-          <runTarget>Mvp4gMultiPresenterExample.html</runTarget>
+          <runTarget>Mvp4gMultiPresenterWithHistorieExample.html</runTarget>
           <!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
           <compileReport>true</compileReport>
-          <!-- Run tests using HtmlUnit -->
-          <mode>htmlunit</mode>
-          <!-- Tests patterns -->
-          <includes>**/Test*.java,**/*Test.java,**/*TestCase.java</includes>
+          <debugSuspend>false</debugSuspend>
+          <logLevel>TRACE</logLevel>
+          <copyWebapp>true</copyWebapp>
+          <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+          <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+          <hostedWebapp>${basedir}/src/main/webapp</hostedWebapp>
         </configuration>
       </plugin>
 

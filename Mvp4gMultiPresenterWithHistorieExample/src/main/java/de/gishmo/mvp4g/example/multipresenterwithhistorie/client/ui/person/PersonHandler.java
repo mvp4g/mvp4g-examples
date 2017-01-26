@@ -15,7 +15,6 @@ import de.gishmo.mvp4g.example.multipresenterwithhistorie.client.delegate.CloseT
 import de.gishmo.mvp4g.example.multipresenterwithhistorie.client.history.EventName;
 import de.gishmo.mvp4g.example.multipresenterwithhistorie.client.model.ApplicationContext;
 import de.gishmo.mvp4g.example.multipresenterwithhistorie.client.service.PersonServiceAsync;
-import de.gishmo.mvp4g.example.multipresenterwithhistorie.client.ui.person.IPersonView.Presenter;
 import de.gishmo.mvp4g.example.multipresenterwithhistorie.shared.dto.HistoryContext.HistoryItem;
 import de.gishmo.mvp4g.example.multipresenterwithhistorie.shared.dto.Person;
 

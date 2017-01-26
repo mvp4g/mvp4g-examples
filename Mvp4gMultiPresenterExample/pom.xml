@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <!-- POM file generated with GWT webAppCreator -->
@@ -12,13 +12,14 @@
 
   <properties>
     <!-- Convenience property to set the GWT version -->
-    <gwt.version>2.7.0</gwt.version>
+    <gwt.version>2.8.0</gwt.version>
     <gxt.version>4.0.0</gxt.version>
     <!-- Convenience property to set the mvp4g version -->
     <mvp4g.version>1.5.0</mvp4g.version>
     <!-- Note: GWT needs at least java 1.6 -->
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencyManagement>
@@ -29,6 +30,7 @@
         <artifactId>gwt</artifactId>
         <version>${gwt.version}</version>
         <scope>import</scope>
+        <type>pom</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -80,6 +82,8 @@
 
 
   <build>
+    <!-- Generate compiled stuff in the folder used for development mode -->
+    <outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
     <!-- Resources -->
     <resources>
       <resource>
@@ -98,15 +102,7 @@
               <goal>compile</goal>
             </goals>
           </execution>
-          <execution>
-            <!-- Run tests through gwt:test, this allows reusing the plugin configuration for GWTTestCases -->
-            <id>gwt-tests</id>
-            <phase>test</phase>
-            <goals>
-              <goal>test</goal>
-            </goals>
-          </execution>
-        </executions>
+         </executions>
         <!-- Plugin configuration. There are many available options, 
              see gwt-maven-plugin documentation at codehaus.org -->
         <configuration>
@@ -117,10 +113,12 @@
           <runTarget>Mvp4gMultiPresenterExample.html</runTarget>
           <!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
           <compileReport>true</compileReport>
-          <!-- Run tests using HtmlUnit -->
-          <mode>htmlunit</mode>
-          <!-- Tests patterns -->
-          <includes>**/Test*.java,**/*Test.java,**/*TestCase.java</includes>
+          <debugSuspend>false</debugSuspend>
+          <logLevel>TRACE</logLevel>
+          <copyWebapp>true</copyWebapp>
+          <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+          <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+          <hostedWebapp>${basedir}/src/main/webapp</hostedWebapp>
         </configuration>
       </plugin>
 
