@@ -6,15 +6,10 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea/workspace.xml
-.idea/tasks.xml
-
-# Sensitive or high-churn files:
-.idea/
+/.idea/
 
 # Gradle:
 .idea/gradle.xml
-.idea/libraries
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
@@ -83,9 +78,10 @@ Temporary Items
 .apdisk
 
 .settings/
-bin/
-lib/
-target/
+/bin/
+/lib/
+/target/
+/src/main/gwt-unitCache
 /src/main/webapp/WEB-INF/classes/
 /src/main/webapp/mvp4gmultipresenterwithhistorieexample/
 /auncherDir,
