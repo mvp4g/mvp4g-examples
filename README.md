@@ -5,7 +5,7 @@ To help you understand the framework, Mvp4g comes with tutorials and examples. H
 #### Examples
 
 #####EmployeeAdmin
-The GWT PureMvc example (as part of the mvp4g showcase [here]/http://mvp4gexsc.appspot.com/)) but implemented with the Mvp4g framework.
+The GWT PureMvc example (as part of the mvp4g showcase [here](http://mvp4gexsc.appspot.com/)) but implemented with the Mvp4g framework.
 
 #####EmployeeAdmin with GXT:
 Same example as EmployeeAdmin but implemented with GXT using different approaches ([see Mvp4g and GXT post](https://groups.google.com/forum/#!topic/mvp4g/W6hmSvu9ofc)).
