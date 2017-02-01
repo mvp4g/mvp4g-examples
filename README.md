@@ -23,7 +23,7 @@ This example demonstrates the use of the Multi-Presenter feature of mvp4g suppor
 
 After starting the application, it shows a list of person. To open a new tab, double click a row in the grid. It is also possible to add a new person by pressing the 'add person'-button.
 
-The history is implemented in that way, that it will always remmebers all open tabs. If the program is reloaded, it shows all tabs open, that where selected the last time. Using the browsers back- 
-or forward-button will not change the opened tabs. It might be possible to implement this by changing the implemntation inside the history converter.
+The history is implemented in that way, that it will always remembers all open tabs. If the program is reloaded, it shows all tabs open, that where selected the last time. Using the browsers back- 
+or forward-button will not change the opened tabs. It might be possible to implement this by changing the implementation inside the history converter.
 
 
