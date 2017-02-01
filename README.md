@@ -14,7 +14,7 @@ Same example as EmployeeAdmin but implemented with GXT using different approache
 #####Mvp4gMultiPresenterExample
 This example demonstrates the use of the Multi-Presenter feature of mvp4g without using History. 
 
-Once the program is started, you'll see a Dashboard with an empty portlet. This portlet contains the unique IDs of all opened presenter. By pressing the the 'add tab'-button, a new tab is created 
-and the unique ID of the presenter is added to the grid of open tabs. Double clicking a row in the will bring the corresponding presenter to front.
+Once the program is started, you'll see a Dashboard with an empty portlet. This portlet contains the unique IDs of all opened presenter. By pressing the 'add tab'-button, a new tab is created 
+and the unique ID of the presenter is added to the grid of open tabs. Double clicking a row in the grid will bring the corresponding presenter to front.
 
 The implementation is done with a mvp4g Eventhandler which manages new tabs, open tabs and closing a tab.
