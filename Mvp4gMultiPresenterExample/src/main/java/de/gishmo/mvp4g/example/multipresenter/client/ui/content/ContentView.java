@@ -108,7 +108,7 @@ public final class ContentView
         .setColumnLines(true);
     grid.setHeight(512);
     Portlet portlet01 = new Portlet();
-    portlet01.setHeading("Offene Tabs");
+    portlet01.setHeading("Open Tabs");
     portlet01.add(grid);
     portal.add(portlet01,
                0);
@@ -298,7 +298,7 @@ public final class ContentView
   }
 
   @Override
-  public void selectUebersicht() {
+  public void selectPortel() {
     tabPanel.scrollToTab(portal,
                          true);
     tabPanel.setActiveWidget(portal);

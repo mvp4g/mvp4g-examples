@@ -94,16 +94,16 @@ public final class ContentView
     storePerson = new ListStore<>(personProperties.key());
     ColumnConfig<Person, String> firstNameColumn = new ColumnConfig<>(personProperties.firstName(),
                                                                       128,
-                                                                      "Vorname");
+                                                                      "Firstname");
     ColumnConfig<Person, String> nameColumn = new ColumnConfig<>(personProperties.name(),
                                                                  128,
                                                                  "Name");
     ColumnConfig<Person, String> streetColumn = new ColumnConfig<>(personProperties.street(),
                                                                    128,
-                                                                   "Strasse");
+                                                                   "Street");
     ColumnConfig<Person, String> cityColumn = new ColumnConfig<>(personProperties.city(),
                                                                  128,
-                                                                 "Ort");
+                                                                 "City");
     List<ColumnConfig<Person, ?>> columns = new ArrayList<>();
     columns.add(firstNameColumn);
     columns.add(nameColumn);
@@ -123,7 +123,7 @@ public final class ContentView
               .setColumnLines(true);
     gridPerson.setHeight(512);
     Portlet portlet02 = new Portlet();
-    portlet02.setHeading("Personen");
+    portlet02.setHeading("Persons");
     portlet02.add(gridPerson);
     portal.add(portlet02,
                0);

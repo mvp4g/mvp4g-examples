@@ -26,7 +26,7 @@ public interface IContentView
 
   void select(String id);
 
-  void selectUebersicht();
+  void selectPortel();
 
   interface Presenter {
 

@@ -70,8 +70,8 @@ public final class ContentPresenter
     view.select(id);
   }
 
-  public void onSelectUebersicht() {
-    view.selectUebersicht();
+  public void onSelectPortal() {
+    view.selectPortel();
   }
 
   @Override
@@ -82,7 +82,7 @@ public final class ContentPresenter
   @Override
   public void doClose(String id) {
     eventBus.closeTabItem(id);
-    eventBus.selectUebersicht();
+    eventBus.selectPortal();
   }
 
   @Override
@@ -95,7 +95,7 @@ public final class ContentPresenter
       public void onDialogHide(DialogHideEvent event) {
         if (PredefinedButton.YES.equals(event.getHideButton())) {
           eventBus.closeTabItem(id);
-          eventBus.selectUebersicht();
+          eventBus.selectPortal();
         }
       }
     });
